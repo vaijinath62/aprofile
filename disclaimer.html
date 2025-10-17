@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer - AProfile App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #028090;
+            --secondary-color: #05668d;
+            --accent-color: #00a896;
+            --bg-light: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+            border-left: 4px solid #dc3545;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box h4 {
+            color: #dc3545;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, rgba(2, 128, 144, 0.1) 0%, rgba(0, 168, 150, 0.1) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-bar .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .main-content {
+                padding: 0 1rem;
+                margin: 2rem auto;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .warning-box, .info-box {
+                padding: 1rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1.5rem 0;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .content-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Legal Disclaimer</h1>
+            <p>Important legal information about our services and platform.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">AProfile App</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-section">
+            <p><strong>Last Updated:</strong> December 2024</p>
+            
+            <p>This Legal Disclaimer ("Disclaimer") applies to your use of AProfile App's website, mobile application, and related services (collectively, the "Service"). Please read this Disclaimer carefully before using our Service.</p>
+            
+            <div class="warning-box">
+                <h4>Important Notice</h4>
+                <p>By using our Service, you acknowledge that you have read, understood, and agree to be bound by this Disclaimer. If you do not agree with any part of this Disclaimer, you must not use our Service.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>1. Service Nature and Limitations</h2>
+            
+            <h3>1.1 Platform Intermediary</h3>
+            <p>AProfile App is a technology platform that connects users with independent service providers. We do not:</p>
+            <ul>
+                <li>Directly provide the services listed on our platform</li>
+                <li>Employ or control the service providers</li>
+                <li>Guarantee the quality, safety, or availability of services</li>
+                <li>Assume responsibility for service provider actions or omissions</li>
+                <li>Provide warranties for third-party services</li>
+            </ul>
+
+            <h3>1.2 Service Availability</h3>
+            <p>We strive to maintain continuous service availability but cannot guarantee:</p>
+            <ul>
+                <li>Uninterrupted access to our platform</li>
+                <li>Error-free operation of our systems</li>
+                <li>Availability of specific service providers</li>
+                <li>Compatibility with all devices or operating systems</li>
+                <li>Immediate resolution of technical issues</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>2. No Warranty or Guarantee</h2>
+            
+            <h3>2.1 Service "As Is"</h3>
+            <p>Our Service is provided on an "as is" and "as available" basis without any warranties, express or implied. We disclaim all warranties, including but not limited to:</p>
+            <ul>
+                <li>Warranties of merchantability</li>
+                <li>Warranties of fitness for a particular purpose</li>
+                <li>Warranties of non-infringement</li>
+                <li>Warranties arising from course of dealing or usage of trade</li>
+            </ul>
+
+            <h3>2.2 Third-Party Services</h3>
+            <p>We make no warranties regarding:</p>
+            <ul>
+                <li>The quality or safety of services provided by third parties</li>
+                <li>The accuracy of service provider profiles or descriptions</li>
+                <li>The reliability or availability of service providers</li>
+                <li>The outcomes of services provided by third parties</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>User Responsibility</h4>
+                <p>Users are responsible for verifying the credentials, qualifications, and suitability of service providers before engaging their services.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>3. Limitation of Liability</h2>
+            
+            <h3>3.1 General Limitations</h3>
+            <p>To the maximum extent permitted by applicable law, AProfile App shall not be liable for:</p>
+            <ul>
+                <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+                <li>Loss of profits, revenue, data, or use</li>
+                <li>Business interruption or loss of business opportunities</li>
+                <li>Damages arising from third-party services or actions</li>
+                <li>Damages resulting from unauthorized access to your account</li>
+                <li>Damages arising from force majeure events</li>
+            </ul>
+
+            <h3>3.2 Maximum Liability</h3>
+            <p>Our total liability to you for any claims arising from or relating to the Service shall not exceed the amount you paid us for the Service in the 12 months preceding the claim, or $100, whichever is greater.</p>
+
+            <div class="warning-box">
+                <h4>Legal Notice</h4>
+                <p>Some jurisdictions do not allow the exclusion or limitation of certain damages. In such cases, our liability is limited to the fullest extent permitted by law.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>4. Third-Party Content and Services</h2>
+            
+            <h3>4.1 Third-Party Links</h3>
+            <p>Our Service may contain links to third-party websites or services. We are not responsible for:</p>
+            <ul>
+                <li>The content, privacy policies, or practices of third-party sites</li>
+                <li>The availability or functionality of linked sites</li>
+                <li>Any damages resulting from use of third-party sites</li>
+                <li>The accuracy or reliability of third-party content</li>
+            </ul>
+
+            <h3>4.2 User-Generated Content</h3>
+            <p>We do not endorse or assume responsibility for:</p>
+            <ul>
+                <li>Content posted by users or service providers</li>
+                <li>Reviews, ratings, or testimonials</li>
+                <li>Claims made by service providers about their services</li>
+                <li>Accuracy of user-submitted information</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>5. Security and Data</h2>
+            
+            <h3>5.1 Data Security</h3>
+            <p>While we implement security measures to protect your information, we cannot guarantee:</p>
+            <ul>
+                <li>Complete security of data transmission or storage</li>
+                <li>Protection against all forms of cyber attacks</li>
+                <li>Prevention of unauthorized access to your account</li>
+                <li>Recovery of lost or corrupted data</li>
+            </ul>
+
+            <h3>5.2 Data Loss</h3>
+            <p>We are not responsible for any loss of data, including but not limited to:</p>
+            <ul>
+                <li>Data loss due to system failures</li>
+                <li>Data corruption or deletion</li>
+                <li>Loss of data during account termination</li>
+                <li>Data loss due to third-party actions</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>6. Regulatory Compliance</h2>
+            
+            <h3>6.1 Service Provider Compliance</h3>
+            <p>Service providers are responsible for:</p>
+            <ul>
+                <li>Obtaining necessary licenses and permits</li>
+                <li>Complying with applicable laws and regulations</li>
+                <li>Maintaining appropriate insurance coverage</li>
+                <li>Meeting industry standards and requirements</li>
+            </ul>
+
+            <h3>6.2 Platform Compliance</h3>
+            <p>While we strive to ensure platform compliance, we cannot guarantee that all service providers maintain current compliance with all applicable regulations.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>7. Force Majeure</h2>
+            
+            <p>We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including but not limited to:</p>
+            <ul>
+                <li>Natural disasters, acts of God, or extreme weather</li>
+                <li>War, terrorism, or civil unrest</li>
+                <li>Government actions or regulations</li>
+                <li>Internet outages or telecommunications failures</li>
+                <li>Labor disputes or strikes</li>
+                <li>Pandemics or public health emergencies</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>8. Geographic Limitations</h2>
+            
+            <h3>8.1 Service Availability</h3>
+            <p>Our Service may not be available in all geographic locations. Service availability is subject to:</p>
+            <ul>
+                <li>Local laws and regulations</li>
+                <li>Network and infrastructure limitations</li>
+                <li>Licensing and compliance requirements</li>
+                <li>Business and operational considerations</li>
+            </ul>
+
+            <h3>8.2 International Users</h3>
+            <p>If you access our Service from outside our primary service area, you do so at your own risk and are responsible for compliance with local laws.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>9. Updates and Modifications</h2>
+            
+            <p>We reserve the right to:</p>
+            <ul>
+                <li>Modify or discontinue any aspect of our Service</li>
+                <li>Update this Disclaimer at any time</li>
+                <li>Change our policies and procedures</li>
+                <li>Suspend or terminate user accounts</li>
+            </ul>
+
+            <p>Continued use of our Service after changes constitutes acceptance of the updated terms.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>10. Governing Law and Jurisdiction</h2>
+            
+            <h3>10.1 Applicable Law</h3>
+            <p>This Disclaimer is governed by the laws of [Your Jurisdiction], without regard to conflict of law principles.</p>
+
+            <h3>10.2 Jurisdiction</h3>
+            <p>Any disputes arising from this Disclaimer or the Service shall be subject to the exclusive jurisdiction of the courts in [Your Jurisdiction].</p>
+
+            <h3>10.3 Severability</h3>
+            <p>If any provision of this Disclaimer is found to be unenforceable, the remaining provisions shall remain in full force and effect.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>11. Professional Advice</h2>
+            
+            <p>The information provided through our Service is for general informational purposes only and does not constitute:</p>
+            <ul>
+                <li>Professional, legal, or financial advice</li>
+                <li>Medical or health advice</li>
+                <li>Recommendations for specific services or providers</li>
+                <li>Endorsements of any particular service provider</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Seek Professional Advice</h4>
+                <p>For specific advice related to your situation, please consult with qualified professionals in the relevant field.</p>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Questions About This Disclaimer</h3>
+            <p>If you have any questions about this Legal Disclaimer, please contact us:</p>
+            <p><strong>Email:</strong> <a href="mailto:legal@aprofileapp.com">legal@aprofileapp.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p><strong>Address:</strong> 123 Business Street, City, State 12345</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AProfile App. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a> | <a href="cookie-policy.html">Cookie Policy</a> | <a href="disclaimer.html">Disclaimer</a> | <a href="contact.html">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

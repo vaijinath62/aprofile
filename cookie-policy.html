@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy - AProfile App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #028090;
+            --secondary-color: #05668d;
+            --accent-color: #00a896;
+            --bg-light: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Cookie Table */
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .cookie-table th,
+        .cookie-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cookie-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .cookie-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, rgba(2, 128, 144, 0.1) 0%, rgba(0, 168, 150, 0.1) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Cookie Categories */
+        .cookie-category {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .cookie-category h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-bar .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .main-content {
+                padding: 0 1rem;
+                margin: 2rem auto;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .cookie-table {
+                font-size: 0.9rem;
+            }
+
+            .cookie-table th,
+            .cookie-table td {
+                padding: 0.8rem;
+            }
+
+            .info-box {
+                padding: 1rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1.5rem 0;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .content-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .cookie-table {
+                font-size: 0.8rem;
+            }
+
+            .cookie-table th,
+            .cookie-table td {
+                padding: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Cookie Policy</h1>
+            <p>Learn how we use cookies and similar technologies on our website and mobile app.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">AProfile App</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-section">
+            <p><strong>Last Updated:</strong> December 2024</p>
+            
+            <p>This Cookie Policy explains how AProfile App ("we", "us", or "our") uses cookies and similar technologies when you visit our website or use our mobile application.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>1. What Are Cookies?</h2>
+            
+            <p>Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently and to provide information to website owners.</p>
+            
+            <p>Cookies can be:</p>
+            <ul>
+                <li><strong>Session cookies:</strong> Temporary cookies that expire when you close your browser</li>
+                <li><strong>Persistent cookies:</strong> Cookies that remain on your device for a set period</li>
+                <li><strong>First-party cookies:</strong> Set by the website you're visiting</li>
+                <li><strong>Third-party cookies:</strong> Set by other websites or services</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Similar Technologies</h4>
+                <p>We also use similar technologies such as web beacons, pixels, and local storage that serve similar purposes to cookies.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>2. How We Use Cookies</h2>
+            
+            <p>We use cookies for several purposes to enhance your experience with our services:</p>
+            
+            <div class="cookie-category">
+                <h4>Essential Cookies</h4>
+                <p>These cookies are necessary for the website to function properly. They enable basic functions like page navigation, access to secure areas, and remembering your preferences.</p>
+            </div>
+
+            <div class="cookie-category">
+                <h4>Performance Cookies</h4>
+                <p>These cookies collect information about how visitors use our website, such as which pages are visited most often. This helps us improve how our website works.</p>
+            </div>
+
+            <div class="cookie-category">
+                <h4>Functionality Cookies</h4>
+                <p>These cookies allow the website to remember choices you make and provide enhanced, more personal features.</p>
+            </div>
+
+            <div class="cookie-category">
+                <h4>Marketing Cookies</h4>
+                <p>These cookies are used to track visitors across websites to display relevant and engaging advertisements.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>3. Types of Cookies We Use</h2>
+            
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Cookie Type</th>
+                        <th>Purpose</th>
+                        <th>Duration</th>
+                        <th>Third Party</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Authentication</td>
+                        <td>Keep you logged in to your account</td>
+                        <td>Session/Persistent</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Preferences</td>
+                        <td>Remember your language and region settings</td>
+                        <td>Persistent</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics</td>
+                        <td>Track website usage and performance</td>
+                        <td>Persistent</td>
+                        <td>Google Analytics</td>
+                    </tr>
+                    <tr>
+                        <td>Security</td>
+                        <td>Protect against fraud and security threats</td>
+                        <td>Session</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Advertising</td>
+                        <td>Show relevant advertisements</td>
+                        <td>Persistent</td>
+                        <td>Various</td>
+                    </tr>
+                    <tr>
+                        <td>Social Media</td>
+                        <td>Enable social media sharing features</td>
+                        <td>Persistent</td>
+                        <td>Facebook, Twitter, etc.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>4. Third-Party Cookies</h2>
+            
+            <p>We use third-party services that may set cookies on your device:</p>
+            
+            <h3>4.1 Google Analytics</h3>
+            <p>We use Google Analytics to analyze how visitors use our website. Google Analytics uses cookies to collect information about website usage.</p>
+            <ul>
+                <li><strong>Purpose:</strong> Website analytics and performance monitoring</li>
+                <li><strong>Data collected:</strong> Pages visited, time spent, referral sources</li>
+                <li><strong>Privacy:</strong> Google's Privacy Policy applies</li>
+            </ul>
+
+            <h3>4.2 Social Media Platforms</h3>
+            <p>We integrate social media features that may set cookies:</p>
+            <ul>
+                <li><strong>Facebook:</strong> For social sharing and login features</li>
+                <li><strong>Twitter:</strong> For social sharing functionality</li>
+                <li><strong>LinkedIn:</strong> For professional networking features</li>
+            </ul>
+
+            <h3>4.3 Payment Processors</h3>
+            <p>We use secure payment processors that may set cookies for fraud prevention and security:</p>
+            <ul>
+                <li><strong>Stripe:</strong> Payment processing and fraud detection</li>
+                <li><strong>PayPal:</strong> Alternative payment method</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>5. Managing Your Cookie Preferences</h2>
+            
+            <h3>5.1 Browser Settings</h3>
+            <p>You can control cookies through your browser settings:</p>
+            <ul>
+                <li><strong>Chrome:</strong> Settings > Privacy and Security > Cookies and other site data</li>
+                <li><strong>Firefox:</strong> Options > Privacy & Security > Cookies and Site Data</li>
+                <li><strong>Safari:</strong> Preferences > Privacy > Cookies and website data</li>
+                <li><strong>Edge:</strong> Settings > Site permissions > Cookies and site data</li>
+            </ul>
+
+            <h3>5.2 Cookie Consent</h3>
+            <p>When you first visit our website, you'll see a cookie consent banner. You can:</p>
+            <ul>
+                <li>Accept all cookies</li>
+                <li>Reject non-essential cookies</li>
+                <li>Customize your preferences</li>
+                <li>Change your preferences at any time</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Important Note</h4>
+                <p>Disabling certain cookies may affect the functionality of our website and your user experience. Essential cookies cannot be disabled as they are necessary for the website to function.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>6. Mobile App Cookies</h2>
+            
+            <p>Our mobile application may also use similar technologies:</p>
+            <ul>
+                <li><strong>Local Storage:</strong> Store app preferences and data locally</li>
+                <li><strong>Analytics:</strong> Track app usage and performance</li>
+                <li><strong>Push Notifications:</strong> Send relevant notifications</li>
+                <li><strong>Device Identifiers:</strong> Identify your device for security purposes</li>
+            </ul>
+
+            <p>You can manage these through your device settings or app preferences.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>7. Cookie Retention</h2>
+            
+            <p>Different cookies have different retention periods:</p>
+            <ul>
+                <li><strong>Session cookies:</strong> Deleted when you close your browser</li>
+                <li><strong>Short-term cookies:</strong> Expire within 30 days</li>
+                <li><strong>Medium-term cookies:</strong> Expire within 1 year</li>
+                <li><strong>Long-term cookies:</strong> May persist for up to 2 years</li>
+            </ul>
+
+            <p>We regularly review and update our cookie practices to ensure they remain appropriate.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>8. International Users</h2>
+            
+            <p>If you are accessing our services from outside the United States, please note that cookie practices may vary by jurisdiction. We comply with applicable laws including:</p>
+            <ul>
+                <li>EU General Data Protection Regulation (GDPR)</li>
+                <li>California Consumer Privacy Act (CCPA)</li>
+                <li>Other applicable privacy and data protection laws</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>9. Updates to This Policy</h2>
+            
+            <p>We may update this Cookie Policy from time to time to reflect changes in our practices or applicable laws. We will notify you of significant changes by:</p>
+            <ul>
+                <li>Posting the updated policy on our website</li>
+                <li>Sending email notifications to registered users</li>
+                <li>Displaying notifications in our mobile app</li>
+            </ul>
+
+            <p>Your continued use of our services after changes constitutes acceptance of the updated policy.</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>If you have any questions about our use of cookies, please contact us:</p>
+            <p><strong>Email:</strong> <a href="mailto:privacy@aprofileapp.com">privacy@aprofileapp.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p><strong>Address:</strong> 123 Business Street, City, State 12345</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AProfile App. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a> | <a href="cookie-policy.html">Cookie Policy</a> | <a href="contact.html">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

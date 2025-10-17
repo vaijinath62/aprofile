@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - AProfile App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #028090;
+            --secondary-color: #05668d;
+            --accent-color: #00a896;
+            --bg-light: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+            border-left: 4px solid #dc3545;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box h4 {
+            color: #dc3545;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, rgba(2, 128, 144, 0.1) 0%, rgba(0, 168, 150, 0.1) 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-bar .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .main-content {
+                padding: 0 1rem;
+                margin: 2rem auto;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .warning-box, .info-box {
+                padding: 1rem;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 1.5rem 0;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .content-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p>Please read these terms carefully before using our services.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">AProfile App</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms-of-service.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-section">
+            <p><strong>Last Updated:</strong> December 2024</p>
+            
+            <p>Welcome to AProfile App. These Terms of Service ("Terms") govern your use of our mobile application and website (collectively, the "Service") operated by AProfile App ("us", "we", or "our").</p>
+            
+            <div class="warning-box">
+                <h4>Important Notice</h4>
+                <p>By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of these terms, then you may not access the Service.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>1. Acceptance of Terms</h2>
+            
+            <p>By creating an account, downloading our mobile application, or using our website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy.</p>
+            
+            <p>If you do not agree to these Terms, you must not use our Service.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>2. Description of Service</h2>
+            
+            <p>AProfile App is a platform that connects users with verified service providers for various home and personal services including:</p>
+            <ul>
+                <li>House cleaning services</li>
+                <li>Beauty and wellness services</li>
+                <li>Home repair and maintenance</li>
+                <li>Document processing and verification</li>
+                <li>Other related services</li>
+            </ul>
+            
+            <p>We act as an intermediary platform and do not directly provide these services ourselves.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>3. User Accounts</h2>
+            
+            <h3>3.1 Account Creation</h3>
+            <p>To use our Service, you must create an account. You agree to:</p>
+            <ul>
+                <li>Provide accurate, current, and complete information</li>
+                <li>Maintain and update your account information</li>
+                <li>Keep your password secure and confidential</li>
+                <li>Accept responsibility for all activities under your account</li>
+            </ul>
+
+            <h3>3.2 Account Requirements</h3>
+            <ul>
+                <li>You must be at least 18 years old to create an account</li>
+                <li>You must provide a valid email address and phone number</li>
+                <li>You may only have one account per person</li>
+                <li>You are responsible for maintaining account security</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>4. User Conduct</h2>
+            
+            <h3>4.1 Prohibited Activities</h3>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Use the Service for any unlawful purpose or in violation of any law</li>
+                <li>Impersonate any person or entity or misrepresent your affiliation</li>
+                <li>Interfere with or disrupt the Service or servers</li>
+                <li>Attempt to gain unauthorized access to any part of the Service</li>
+                <li>Use automated systems to access the Service</li>
+                <li>Harass, abuse, or harm other users</li>
+                <li>Post false, misleading, or inappropriate content</li>
+                <li>Violate any intellectual property rights</li>
+            </ul>
+
+            <h3>4.2 Content Standards</h3>
+            <p>Any content you post must be:</p>
+            <ul>
+                <li>Accurate and truthful</li>
+                <li>Respectful and appropriate</li>
+                <li>Free from offensive or harmful material</li>
+                <li>Compliant with applicable laws and regulations</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>5. Service Provider Relationships</h2>
+            
+            <h3>5.1 Third-Party Services</h3>
+            <p>Our Service connects you with independent service providers. We do not:</p>
+            <ul>
+                <li>Employ or control service providers</li>
+                <li>Guarantee the quality or availability of services</li>
+                <li>Assume responsibility for service provider actions</li>
+                <li>Provide warranties for third-party services</li>
+            </ul>
+
+            <h3>5.2 Service Agreements</h3>
+            <p>Your relationship with service providers is governed by separate agreements between you and the service provider. We are not party to these agreements.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>6. Payments and Billing</h2>
+            
+            <h3>6.1 Payment Processing</h3>
+            <p>We facilitate payments between users and service providers through secure third-party payment processors. You agree to:</p>
+            <ul>
+                <li>Pay all fees and charges in full and on time</li>
+                <li>Provide accurate payment information</li>
+                <li>Authorize us to process payments on your behalf</li>
+                <li>Accept responsibility for all payment-related disputes</li>
+            </ul>
+
+            <h3>6.2 Pricing and Fees</h3>
+            <p>Service prices are determined by service providers. We may charge platform fees as disclosed in our pricing information.</p>
+
+            <div class="info-box">
+                <h4>Refund Policy</h4>
+                <p>Refunds are subject to our refund policy and may vary depending on the service and circumstances. Please contact customer support for refund requests.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>7. Intellectual Property</h2>
+            
+            <h3>7.1 Our Content</h3>
+            <p>The Service and its original content, features, and functionality are owned by AProfile App and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+
+            <h3>7.2 User Content</h3>
+            <p>You retain ownership of content you post, but grant us a license to use, modify, and distribute such content in connection with the Service.</p>
+
+            <h3>7.3 Trademarks</h3>
+            <p>The AProfile App name, logo, and related marks are trademarks of AProfile App. You may not use our trademarks without written permission.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>8. Privacy and Data Protection</h2>
+            
+            <p>Your privacy is important to us. Our collection and use of personal information is governed by our Privacy Policy, which is incorporated into these Terms by reference.</p>
+            
+            <p>By using our Service, you consent to the collection and use of information as described in our Privacy Policy.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>9. Disclaimers and Limitations</h2>
+            
+            <h3>9.1 Service Availability</h3>
+            <p>We strive to provide reliable service but cannot guarantee:</p>
+            <ul>
+                <li>Uninterrupted or error-free service</li>
+                <li>Availability of specific service providers</li>
+                <li>Compatibility with all devices or networks</li>
+                <li>Immediate resolution of technical issues</li>
+            </ul>
+
+            <h3>9.2 Limitation of Liability</h3>
+            <p>To the maximum extent permitted by law:</p>
+            <ul>
+                <li>We provide the Service "as is" without warranties</li>
+                <li>We are not liable for indirect or consequential damages</li>
+                <li>Our liability is limited to the amount you paid for the Service</li>
+                <li>We disclaim all warranties, express or implied</li>
+            </ul>
+
+            <div class="warning-box">
+                <h4>Important Legal Notice</h4>
+                <p>Some jurisdictions do not allow the exclusion of certain warranties or limitations of liability. In such cases, our liability is limited to the fullest extent permitted by law.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>10. Indemnification</h2>
+            
+            <p>You agree to indemnify and hold harmless AProfile App and its affiliates from any claims, damages, losses, or expenses arising from:</p>
+            <ul>
+                <li>Your use of the Service</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any third-party rights</li>
+                <li>Your content or conduct</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>11. Termination</h2>
+            
+            <h3>11.1 Termination by You</h3>
+            <p>You may terminate your account at any time by contacting us or using the account deletion feature in the app.</p>
+
+            <h3>11.2 Termination by Us</h3>
+            <p>We may terminate or suspend your account if you:</p>
+            <ul>
+                <li>Violate these Terms</li>
+                <li>Engage in fraudulent or illegal activity</li>
+                <li>Create multiple accounts</li>
+                <li>Fail to pay required fees</li>
+            </ul>
+
+            <h3>11.3 Effect of Termination</h3>
+            <p>Upon termination:</p>
+            <ul>
+                <li>Your right to use the Service ceases immediately</li>
+                <li>We may delete your account and data</li>
+                <li>Outstanding payments remain due</li>
+                <li>Certain provisions of these Terms survive termination</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>12. Dispute Resolution</h2>
+            
+            <h3>12.1 Governing Law</h3>
+            <p>These Terms are governed by the laws of [Your Jurisdiction], without regard to conflict of law principles.</p>
+
+            <h3>12.2 Dispute Process</h3>
+            <p>Before pursuing legal action, you agree to:</p>
+            <ul>
+                <li>First contact us to attempt informal resolution</li>
+                <li>Participate in good faith negotiations</li>
+                <li>Consider mediation if negotiations fail</li>
+            </ul>
+
+            <h3>12.3 Arbitration</h3>
+            <p>Any disputes arising from these Terms or the Service will be resolved through binding arbitration in accordance with the rules of [Arbitration Organization].</p>
+        </div>
+
+        <div class="content-section">
+            <h2>13. Changes to Terms</h2>
+            
+            <p>We may modify these Terms at any time. We will notify you of changes by:</p>
+            <ul>
+                <li>Posting updated Terms on our website</li>
+                <li>Sending email notifications</li>
+                <li>Providing in-app notifications</li>
+            </ul>
+            
+            <p>Your continued use of the Service after changes constitutes acceptance of the updated Terms.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>14. General Provisions</h2>
+            
+            <h3>14.1 Entire Agreement</h3>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and AProfile App.</p>
+
+            <h3>14.2 Severability</h3>
+            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect.</p>
+
+            <h3>14.3 Waiver</h3>
+            <p>Our failure to enforce any provision of these Terms does not constitute a waiver of that provision.</p>
+
+            <h3>14.4 Assignment</h3>
+            <p>You may not assign your rights or obligations under these Terms without our written consent.</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>If you have any questions about these Terms of Service, please contact us:</p>
+            <p><strong>Email:</strong> <a href="mailto:legal@aprofileapp.com">legal@aprofileapp.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p><strong>Address:</strong> 123 Business Street, City, State 12345</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AProfile App. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a> | <a href="contact.html">Contact Us</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

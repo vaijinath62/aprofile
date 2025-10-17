@@ -1,0 +1,5570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprofile - Home Services at Your Doorstep</title>
+    <meta name="description" content="Aprofile - Home Services at Your Doorstep. Book document services, home cleaning, beauty services, and more - all delivered to your home.">
+    <meta name="keywords" content="home services, doorstep services, cleaning, beauty, document services, on-demand, home care">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #028090;
+            --secondary-color: #9ceaef;
+            --accent-color: #0a7ea4;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(20px);
+            box-shadow: 
+                0 8px 40px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2),
+                0 0 20px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 0;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            border-radius: 50px;
+            z-index: 1000;
+        }
+        
+        .navbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                var(--primary-color) 0%, 
+                var(--secondary-color) 50%, 
+                var(--primary-color) 100%);
+            opacity: 0.6;
+            border-radius: 50px 50px 0 0;
+        }
+        
+        /* Floating animation */
+        @keyframes navbar-float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-2px);
+            }
+        }
+        
+        .navbar {
+            animation: navbar-float 6s ease-in-out infinite;
+        }
+        
+        
+        /* Navbar container adjustments */
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: white !important;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            text-decoration: none;
+        }
+        
+        .brand-logo {
+            width: 45px;
+            height: 45px;
+            margin-right: 0.75rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(2, 128, 144, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: logo-pulse 3s ease-in-out infinite;
+        }
+        
+        .brand-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .brand-logo:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .brand-logo img {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+        }
+        
+        .brand-logo:hover {
+            transform: rotate(5deg) scale(1.1);
+            box-shadow: 0 6px 20px rgba(2, 128, 144, 0.4);
+        }
+        
+        /* Logo pulse animation */
+        @keyframes logo-pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(2, 128, 144, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(2, 128, 144, 0.5);
+            }
+        }
+        
+        .brand-text {
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .brand-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-brand:hover .brand-text::after {
+            width: 100%;
+        }
+        
+        .btn-download-nav {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(2, 128, 144, 0.3);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-download-nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-download-nav:hover::before {
+            left: 100%;
+        }
+        
+        .btn-download-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(2, 128, 144, 0.4);
+            color: white;
+        }
+        
+        .btn-download-nav i {
+            margin-right: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-download-nav:hover i {
+            transform: scale(1.1);
+        }
+        
+        .navbar-actions {
+            gap: 1rem;
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            color: white !important;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.75rem 1.5rem !important;
+            border-radius: 25px;
+            margin: 0 0.25rem;
+            text-decoration: none;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        
+        .nav-link:hover::before {
+            opacity: 1;
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .nav-link i {
+            margin-right: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-link:hover i {
+            transform: scale(1.1);
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.2rem rgba(2, 128, 144, 0.25);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .navbar-nav {
+            align-items: center;
+        }
+        
+        .navbar-collapse {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            margin-top: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(2, 128, 144, 0.1);
+        }
+        
+        .navbar-collapse::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px 15px 0 0;
+        }
+        
+        @media (min-width: 992px) {
+            .navbar-collapse {
+                background: none;
+                border-radius: 0;
+                margin-top: 0;
+                padding: 0;
+                box-shadow: none;
+                border: none;
+                backdrop-filter: none;
+            }
+            
+            .navbar-collapse::before {
+                display: none;
+            }
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        /* Animated Background Elements */
+        .hero-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            clip-path: polygon(50% 0%, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%);
+            animation: float 20s infinite linear;
+        }
+        
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 25s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 80%;
+            animation-delay: -5s;
+            animation-duration: 30s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 20%;
+            animation-delay: -10s;
+            animation-duration: 20s;
+        }
+        
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 70%;
+            animation-delay: -15s;
+            animation-duration: 35s;
+        }
+        
+        .shape:nth-child(5) {
+            width: 40px;
+            height: 40px;
+            top: 40%;
+            left: 5%;
+            animation-delay: -20s;
+            animation-duration: 15s;
+        }
+        
+        .shape:nth-child(6) {
+            width: 90px;
+            height: 90px;
+            top: 70%;
+            left: 60%;
+            animation-delay: -25s;
+            animation-duration: 28s;
+        }
+        
+        /* Geometric Shapes */
+        .geometric-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 50px solid rgba(255, 255, 255, 0.08);
+            animation: rotate 15s infinite linear;
+        }
+        
+        .triangle:nth-child(1) {
+            top: 15%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+        
+        .triangle:nth-child(2) {
+            top: 25%;
+            right: 20%;
+            animation-delay: -5s;
+        }
+        
+        .triangle:nth-child(3) {
+            bottom: 20%;
+            left: 25%;
+            animation-delay: -10s;
+        }
+        
+        .triangle:nth-child(4) {
+            bottom: 30%;
+            right: 15%;
+            animation-delay: -15s;
+        }
+        
+        /* Square shapes */
+        .square {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.06);
+            transform: rotate(45deg);
+            animation: pulse 8s infinite ease-in-out;
+        }
+        
+        .square:nth-child(1) {
+            top: 30%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+        
+        .square:nth-child(2) {
+            top: 50%;
+            right: 30%;
+            animation-delay: -2s;
+        }
+        
+        .square:nth-child(3) {
+            bottom: 40%;
+            left: 40%;
+            animation-delay: -4s;
+        }
+        
+        .square:nth-child(4) {
+            bottom: 20%;
+            right: 40%;
+            animation-delay: -6s;
+        }
+        
+        /* Particle System */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: particle-float 12s infinite linear;
+        }
+        
+        .particle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { top: 20%; left: 80%; animation-delay: -1s; }
+        .particle:nth-child(3) { top: 30%; left: 40%; animation-delay: -2s; }
+        .particle:nth-child(4) { top: 40%; left: 60%; animation-delay: -3s; }
+        .particle:nth-child(5) { top: 50%; left: 10%; animation-delay: -4s; }
+        .particle:nth-child(6) { top: 60%; left: 90%; animation-delay: -5s; }
+        .particle:nth-child(7) { top: 70%; left: 30%; animation-delay: -6s; }
+        .particle:nth-child(8) { top: 80%; left: 70%; animation-delay: -7s; }
+        .particle:nth-child(9) { top: 90%; left: 50%; animation-delay: -8s; }
+        .particle:nth-child(10) { top: 15%; left: 50%; animation-delay: -9s; }
+        
+        /* Additional Animated Elements */
+        .wave-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wave {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: wave-expand 8s infinite ease-out;
+        }
+        
+        .wave:nth-child(1) {
+            top: 20%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+        
+        .wave:nth-child(2) {
+            top: 60%;
+            right: 25%;
+            animation-delay: -2s;
+        }
+        
+        .wave:nth-child(3) {
+            bottom: 30%;
+            left: 60%;
+            animation-delay: -4s;
+        }
+        
+        .wave:nth-child(4) {
+            top: 40%;
+            right: 60%;
+            animation-delay: -6s;
+        }
+        
+        /* Hexagon Shapes */
+        .hexagons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hexagon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            animation: hexagon-float 10s infinite ease-in-out;
+        }
+        
+        .hexagon:nth-child(1) {
+            top: 25%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+        
+        .hexagon:nth-child(2) {
+            top: 45%;
+            right: 20%;
+            animation-delay: -2s;
+        }
+        
+        .hexagon:nth-child(3) {
+            bottom: 35%;
+            left: 35%;
+            animation-delay: -4s;
+        }
+        
+        .hexagon:nth-child(4) {
+            bottom: 15%;
+            right: 45%;
+            animation-delay: -6s;
+        }
+        
+        .hexagon:nth-child(5) {
+            top: 65%;
+            left: 75%;
+            animation-delay: -8s;
+        }
+        
+        /* Diamond Shapes */
+        .diamonds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .diamond {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            transform: rotate(45deg);
+            animation: diamond-spin 6s infinite linear;
+        }
+        
+        .diamond:nth-child(1) {
+            top: 35%;
+            left: 25%;
+            animation-delay: 0s;
+        }
+        
+        .diamond:nth-child(2) {
+            top: 55%;
+            right: 35%;
+            animation-delay: -1.5s;
+        }
+        
+        .diamond:nth-child(3) {
+            bottom: 25%;
+            left: 45%;
+            animation-delay: -3s;
+        }
+        
+        .diamond:nth-child(4) {
+            bottom: 45%;
+            right: 15%;
+            animation-delay: -4.5s;
+        }
+        
+        .diamond:nth-child(5) {
+            top: 75%;
+            left: 65%;
+            animation-delay: -6s;
+        }
+        
+        /* Star Shapes */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .star {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 12px solid rgba(255, 255, 255, 0.1);
+            animation: star-twinkle 4s infinite ease-in-out;
+        }
+        
+        .star::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 12px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 12px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .star:nth-child(1) {
+            top: 15%;
+            left: 40%;
+            animation-delay: 0s;
+        }
+        
+        .star:nth-child(2) {
+            top: 35%;
+            right: 30%;
+            animation-delay: -1s;
+        }
+        
+        .star:nth-child(3) {
+            bottom: 40%;
+            left: 20%;
+            animation-delay: -2s;
+        }
+        
+        .star:nth-child(4) {
+            bottom: 20%;
+            right: 50%;
+            animation-delay: -3s;
+        }
+        
+        .star:nth-child(5) {
+            top: 65%;
+            left: 80%;
+            animation-delay: -4s;
+        }
+        
+        /* Line Elements */
+        .lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: line-move 12s infinite linear;
+        }
+        
+        .line:nth-child(1) {
+            width: 150px;
+            top: 30%;
+            left: -150px;
+            animation-delay: 0s;
+        }
+        
+        .line:nth-child(2) {
+            width: 200px;
+            top: 60%;
+            right: -200px;
+            animation-delay: -3s;
+        }
+        
+        .line:nth-child(3) {
+            width: 100px;
+            bottom: 40%;
+            left: -100px;
+            animation-delay: -6s;
+        }
+        
+        .line:nth-child(4) {
+            width: 180px;
+            bottom: 20%;
+            right: -180px;
+            animation-delay: -9s;
+        }
+        
+        /* Glow Orbs */
+        .glow-orbs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glow-orb {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: glow-pulse 5s infinite ease-in-out;
+        }
+        
+        .glow-orb:nth-child(1) {
+            top: 20%;
+            left: 70%;
+            animation-delay: 0s;
+        }
+        
+        .glow-orb:nth-child(2) {
+            top: 50%;
+            right: 40%;
+            animation-delay: -2.5s;
+        }
+        
+        .glow-orb:nth-child(3) {
+            bottom: 30%;
+            left: 10%;
+            animation-delay: -5s;
+        }
+        
+        /* Spiral/Helix Elements */
+        .spirals {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .spiral {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: spiral-rotate 8s infinite linear;
+        }
+        
+        .spiral::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: spiral-rotate 6s infinite linear reverse;
+        }
+        
+        .spiral::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: spiral-rotate 4s infinite linear;
+        }
+        
+        .spiral:nth-child(1) {
+            top: 15%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+        
+        .spiral:nth-child(2) {
+            top: 35%;
+            right: 25%;
+            animation-delay: -2s;
+        }
+        
+        .spiral:nth-child(3) {
+            bottom: 25%;
+            left: 30%;
+            animation-delay: -4s;
+        }
+        
+        .spiral:nth-child(4) {
+            bottom: 45%;
+            right: 15%;
+            animation-delay: -6s;
+        }
+        
+        /* Morphing Blob Shapes */
+        .blobs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .blob {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50% 30% 70% 40%;
+            animation: blob-morph 12s infinite ease-in-out;
+        }
+        
+        .blob:nth-child(1) {
+            top: 25%;
+            left: 60%;
+            animation-delay: 0s;
+        }
+        
+        .blob:nth-child(2) {
+            top: 55%;
+            right: 30%;
+            animation-delay: -3s;
+        }
+        
+        .blob:nth-child(3) {
+            bottom: 35%;
+            left: 15%;
+            animation-delay: -6s;
+        }
+        
+        .blob:nth-child(4) {
+            bottom: 15%;
+            right: 60%;
+            animation-delay: -9s;
+        }
+        
+        /* Floating Text Elements */
+        .floating-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .text-float {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            font-weight: 600;
+            animation: text-float 15s infinite linear;
+            pointer-events: none;
+        }
+        
+        .text-float:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .text-float:nth-child(2) {
+            top: 40%;
+            right: 20%;
+            animation-delay: -3s;
+        }
+        
+        .text-float:nth-child(3) {
+            bottom: 30%;
+            left: 25%;
+            animation-delay: -6s;
+        }
+        
+        .text-float:nth-child(4) {
+            bottom: 50%;
+            right: 10%;
+            animation-delay: -9s;
+        }
+        
+        .text-float:nth-child(5) {
+            top: 70%;
+            left: 70%;
+            animation-delay: -12s;
+        }
+        
+        /* Interactive Cursor Trail */
+        .cursor-trail {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Gradient Mesh */
+        .gradient-mesh {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+            animation: mesh-shift 20s infinite ease-in-out;
+        }
+        
+        /* Pulsing Rings */
+        .pulsing-rings {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .ring {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: ring-pulse 6s infinite ease-out;
+        }
+        
+        .ring:nth-child(1) {
+            top: 30%;
+            left: 40%;
+            animation-delay: 0s;
+        }
+        
+        .ring:nth-child(2) {
+            top: 60%;
+            right: 35%;
+            animation-delay: -2s;
+        }
+        
+        .ring:nth-child(3) {
+            bottom: 40%;
+            left: 20%;
+            animation-delay: -4s;
+        }
+        
+        /* Ripple Effects */
+        .ripples {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .ripple {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: ripple-expand 4s infinite ease-out;
+        }
+        
+        .ripple:nth-child(1) {
+            top: 25%;
+            left: 70%;
+            animation-delay: 0s;
+        }
+        
+        .ripple:nth-child(2) {
+            top: 45%;
+            right: 20%;
+            animation-delay: -1s;
+        }
+        
+        .ripple:nth-child(3) {
+            bottom: 30%;
+            left: 50%;
+            animation-delay: -2s;
+        }
+        
+        .ripple:nth-child(4) {
+            bottom: 50%;
+            right: 50%;
+            animation-delay: -3s;
+        }
+        
+        /* Heart Shapes */
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            animation: heart-beat 4s infinite ease-in-out;
+        }
+        
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .heart::before {
+            top: -15px;
+            left: 0;
+        }
+        
+        .heart::after {
+            top: 0;
+            left: -15px;
+        }
+        
+        .heart:nth-child(1) {
+            top: 15%;
+            left: 25%;
+            animation-delay: 0s;
+        }
+        
+        .heart:nth-child(2) {
+            top: 35%;
+            right: 30%;
+            animation-delay: -1s;
+        }
+        
+        .heart:nth-child(3) {
+            bottom: 40%;
+            left: 20%;
+            animation-delay: -2s;
+        }
+        
+        .heart:nth-child(4) {
+            bottom: 20%;
+            right: 45%;
+            animation-delay: -3s;
+        }
+        
+        /* Cloud Shapes */
+        .clouds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .cloud {
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            animation: cloud-float 12s infinite linear;
+        }
+        
+        .cloud::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -15px;
+            left: 10px;
+        }
+        
+        .cloud::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -20px;
+            right: 10px;
+        }
+        
+        .cloud:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .cloud:nth-child(2) {
+            top: 50%;
+            right: 15%;
+            animation-delay: -3s;
+        }
+        
+        .cloud:nth-child(3) {
+            bottom: 30%;
+            left: 35%;
+            animation-delay: -6s;
+        }
+        
+        .cloud:nth-child(4) {
+            bottom: 15%;
+            right: 35%;
+            animation-delay: -9s;
+        }
+        
+        /* Lightning Bolts */
+        .lightning {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .bolt {
+            position: absolute;
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: lightning-flash 3s infinite ease-in-out;
+            transform-origin: top;
+        }
+        
+        .bolt::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2px;
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+        
+        .bolt::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -2px;
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(-45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+        
+        .bolt:nth-child(1) {
+            top: 20%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+        
+        .bolt:nth-child(2) {
+            top: 50%;
+            right: 40%;
+            animation-delay: -1s;
+        }
+        
+        .bolt:nth-child(3) {
+            bottom: 30%;
+            left: 60%;
+            animation-delay: -2s;
+        }
+        
+        /* DNA Helix */
+        .dna-helix {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .helix {
+            position: absolute;
+            width: 4px;
+            height: 200px;
+            background: linear-gradient(to bottom, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(255, 255, 255, 0.05) 50%, 
+                rgba(255, 255, 255, 0.1) 100%);
+            animation: helix-rotate 10s infinite linear;
+            transform-origin: center;
+        }
+        
+        .helix::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 4px;
+            height: 200px;
+            background: linear-gradient(to bottom, 
+                rgba(255, 255, 255, 0.05) 0%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                rgba(255, 255, 255, 0.05) 100%);
+            animation: helix-rotate 10s infinite linear reverse;
+        }
+        
+        .helix:nth-child(1) {
+            top: 10%;
+            left: 25%;
+            animation-delay: 0s;
+        }
+        
+        .helix:nth-child(2) {
+            top: 20%;
+            right: 30%;
+            animation-delay: -2.5s;
+        }
+        
+        .helix:nth-child(3) {
+            bottom: 20%;
+            left: 40%;
+            animation-delay: -5s;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-20px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-40px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-20px) rotate(270deg);
+            }
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: rotate(45deg) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: rotate(45deg) scale(1.2);
+                opacity: 0.3;
+            }
+        }
+        
+        @keyframes particle-float {
+            0% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+        
+        /* Gradient Overlay */
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(2, 128, 144, 0.1) 0%, 
+                rgba(156, 234, 239, 0.1) 25%, 
+                rgba(10, 126, 164, 0.1) 50%, 
+                rgba(2, 128, 144, 0.1) 75%, 
+                rgba(156, 234, 239, 0.1) 100%);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+            z-index: 2;
+        }
+        
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        /* New Animation Keyframes */
+        @keyframes wave-expand {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes hexagon-float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+                opacity: 0.8;
+            }
+        }
+        
+        @keyframes diamond-spin {
+            0% {
+                transform: rotate(45deg) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: rotate(225deg) scale(1.3);
+                opacity: 0.3;
+            }
+            100% {
+                transform: rotate(405deg) scale(1);
+                opacity: 0.6;
+            }
+        }
+        
+        @keyframes star-twinkle {
+            0%, 100% {
+                opacity: 0.1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.2);
+            }
+        }
+        
+        @keyframes line-move {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100vw);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.3;
+            }
+        }
+        
+        @keyframes spiral-rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes blob-morph {
+            0%, 100% {
+                border-radius: 50% 30% 70% 40%;
+                transform: rotate(0deg) scale(1);
+            }
+            25% {
+                border-radius: 30% 70% 40% 50%;
+                transform: rotate(90deg) scale(1.1);
+            }
+            50% {
+                border-radius: 70% 40% 50% 30%;
+                transform: rotate(180deg) scale(0.9);
+            }
+            75% {
+                border-radius: 40% 50% 30% 70%;
+                transform: rotate(270deg) scale(1.05);
+            }
+        }
+        
+        @keyframes text-float {
+            0% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+                opacity: 0.1;
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px) rotate(5deg);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-40px) translateX(-10px) rotate(-5deg);
+                opacity: 0.2;
+            }
+            75% {
+                transform: translateY(-20px) translateX(15px) rotate(3deg);
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+                opacity: 0.1;
+            }
+        }
+        
+        @keyframes mesh-shift {
+            0%, 100% {
+                background-position: 0% 0%, 100% 100%, 50% 50%;
+            }
+            33% {
+                background-position: 50% 25%, 75% 75%, 25% 75%;
+            }
+            66% {
+                background-position: 100% 50%, 50% 50%, 75% 25%;
+            }
+        }
+        
+        @keyframes ring-pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes ripple-expand {
+            0% {
+                transform: scale(0.5);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.4;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes lightning-flash {
+            0%, 90%, 100% {
+                opacity: 0;
+                transform: scaleY(0);
+            }
+            5%, 10% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+            15% {
+                opacity: 0.5;
+                transform: scaleY(1.2);
+            }
+        }
+        
+        @keyframes helix-rotate {
+            0% {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            25% {
+                transform: rotateY(90deg) rotateX(15deg);
+            }
+            50% {
+                transform: rotateY(180deg) rotateX(0deg);
+            }
+            75% {
+                transform: rotateY(270deg) rotateX(-15deg);
+            }
+            100% {
+                transform: rotateY(360deg) rotateX(0deg);
+            }
+        }
+        
+        /* New Animation Keyframes */
+        @keyframes heart-beat {
+            0%, 100% {
+                transform: rotate(45deg) scale(1);
+                opacity: 0.6;
+            }
+            25% {
+                transform: rotate(45deg) scale(1.05);
+                opacity: 0.7;
+            }
+            50% {
+                transform: rotate(45deg) scale(1.1);
+                opacity: 0.8;
+            }
+            75% {
+                transform: rotate(45deg) scale(1.05);
+                opacity: 0.7;
+            }
+        }
+        
+        @keyframes cloud-float {
+            0% {
+                transform: translateX(0px) translateY(0px);
+                opacity: 0.6;
+            }
+            25% {
+                transform: translateX(10px) translateY(-5px);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateX(20px) translateY(-10px);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translateX(10px) translateY(-5px);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateX(0px) translateY(0px);
+                opacity: 0.6;
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-image {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+        
+        .btn-hero {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transition: left 0.5s ease;
+            z-index: -1;
+        }
+        
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+        
+        .btn-hero:hover::before {
+            left: 0;
+        }
+        
+        .btn-hero i {
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-hero:hover i {
+            transform: scale(1.1);
+        }
+        
+        .hero-image {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .phone-mockup {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Section Background Animation */
+        .section-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .section-bg-animation .shape {
+            background: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .triangle {
+            border-bottom-color: rgba(2, 128, 144, 0.2);
+        }
+        
+        .section-bg-animation .square {
+            background: rgba(2, 128, 144, 0.18);
+        }
+        
+        .section-bg-animation .particle {
+            background: rgba(2, 128, 144, 0.35);
+        }
+        
+        .section-bg-animation .wave {
+            border-color: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .hexagon {
+            background: rgba(2, 128, 144, 0.15);
+        }
+        
+        .section-bg-animation .diamond {
+            background: rgba(2, 128, 144, 0.2);
+        }
+        
+        .section-bg-animation .star {
+            border-bottom-color: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .star::before {
+            border-top-color: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .line {
+            background: linear-gradient(90deg, transparent, rgba(2, 128, 144, 0.25), transparent);
+        }
+        
+        .section-bg-animation .glow-orb {
+            background: radial-gradient(circle, rgba(2, 128, 144, 0.25) 0%, transparent 70%);
+        }
+        
+        .section-bg-animation .spiral {
+            border-color: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .spiral::before {
+            border-color: rgba(2, 128, 144, 0.2);
+        }
+        
+        .section-bg-animation .spiral::after {
+            border-color: rgba(2, 128, 144, 0.18);
+        }
+        
+        .section-bg-animation .blob {
+            background: rgba(2, 128, 144, 0.15);
+        }
+        
+        .section-bg-animation .text-float {
+            color: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .ring {
+            border-color: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .ripple {
+            border-color: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .heart {
+            background: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .heart::before,
+        .section-bg-animation .heart::after {
+            background: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .cloud {
+            background: rgba(2, 128, 144, 0.25);
+        }
+        
+        .section-bg-animation .cloud::before,
+        .section-bg-animation .cloud::after {
+            background: rgba(2, 128, 144, 0.25);
+        }
+        
+        /* Ensure content is above animations */
+        .features-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(2, 128, 144, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .about-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-description {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .about-image-container {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            animation: float-card 6s ease-in-out infinite;
+        }
+        
+        .floating-card i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .card-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .card-2 {
+            top: 60%;
+            right: 15%;
+            animation-delay: -2s;
+        }
+        
+        .card-3 {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -4s;
+        }
+        
+        @keyframes float-card {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        /* How It Works Section */
+        .how-it-works-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .how-it-works-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            border: 1px solid rgba(2, 128, 144, 0.1);
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover .step-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .step-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(2, 128, 144, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .service-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(2, 128, 144, 0.1);
+            position: relative;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .customer-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .customer-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .customer-info {
+            flex: 1;
+        }
+        
+        .customer-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .customer-rating {
+            display: flex;
+            gap: 0.25rem;
+        }
+        
+        .customer-rating i {
+            color: #ffc107;
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-text {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-service {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-service i {
+            font-size: 1rem;
+        }
+        
+        /* Statistics Section */
+        .stats-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Special styling for stats section animations */
+        .stats-section .section-bg-animation .shape {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .triangle {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .stats-section .section-bg-animation .square {
+            background: rgba(255, 255, 255, 0.18);
+        }
+        
+        .stats-section .section-bg-animation .particle {
+            background: rgba(255, 255, 255, 0.35);
+        }
+        
+        .stats-section .section-bg-animation .wave {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .hexagon {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .stats-section .section-bg-animation .diamond {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .stats-section .section-bg-animation .star {
+            border-bottom-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .star::before {
+            border-top-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .line {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+        }
+        
+        .stats-section .section-bg-animation .glow-orb {
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+        }
+        
+        .stats-section .section-bg-animation .spiral {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .spiral::before {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .stats-section .section-bg-animation .spiral::after {
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+        
+        .stats-section .section-bg-animation .blob {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .stats-section .section-bg-animation .text-float {
+            color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .ring {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .ripple {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .heart {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .heart::before,
+        .stats-section .section-bg-animation .heart::after {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .cloud {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stats-section .section-bg-animation .cloud::before,
+        .stats-section .section-bg-animation .cloud::after {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover .stat-icon {
+            background: white;
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Download Section */
+        .download-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Special styling for download section animations */
+        .download-section .section-bg-animation .shape {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .triangle {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .download-section .section-bg-animation .square {
+            background: rgba(255, 255, 255, 0.18);
+        }
+        
+        .download-section .section-bg-animation .particle {
+            background: rgba(255, 255, 255, 0.35);
+        }
+        
+        .download-section .section-bg-animation .wave {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .hexagon {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .download-section .section-bg-animation .diamond {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .download-section .section-bg-animation .star {
+            border-bottom-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .star::before {
+            border-top-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .line {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+        }
+        
+        .download-section .section-bg-animation .glow-orb {
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+        }
+        
+        .download-section .section-bg-animation .spiral {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .spiral::before {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .download-section .section-bg-animation .spiral::after {
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+        
+        .download-section .section-bg-animation .blob {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .download-section .section-bg-animation .text-float {
+            color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .ring {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .ripple {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .heart {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .heart::before,
+        .download-section .section-bg-animation .heart::after {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .cloud {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-section .section-bg-animation .cloud::before,
+        .download-section .section-bg-animation .cloud::after {
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .download-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .download-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            color: var(--primary-color);
+        }
+        
+        .download-btn i {
+            font-size: 1.5rem;
+        }
+        
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .faq-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .accordion-item {
+            border: 1px solid rgba(2, 128, 144, 0.1);
+            border-radius: 15px !important;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .accordion-button {
+            background: white;
+            border: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            padding: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: none;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(2, 128, 144, 0.25);
+        }
+        
+        .accordion-body {
+            padding: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(2, 128, 144, 0.1);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1);
+        }
+        
+        .contact-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .contact-form-container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(2, 128, 144, 0.1);
+        }
+        
+        .form-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            border: 2px solid rgba(2, 128, 144, 0.1);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--bg-light);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(2, 128, 144, 0.25);
+            background: white;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(2, 128, 144, 0.3);
+            width: 100%;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(2, 128, 144, 0.4);
+            color: white;
+        }
+        
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.75rem;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(2, 128, 144, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(2, 128, 144, 0.4);
+        }
+        
+        .footer-logo img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            color: var(--secondary-color);
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* Navigation Mobile */
+            .navbar {
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                border-radius: 40px;
+                padding: 0.75rem 0;
+            }
+            
+            .navbar .container {
+                padding: 0 1.5rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .navbar-nav {
+                text-align: center;
+                margin-top: 1rem;
+            }
+            
+            .navbar-nav .nav-link {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 1rem;
+            }
+            
+            /* Hero Section Mobile */
+            .hero-section {
+                padding: 80px 0 60px;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                line-height: 1.4;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            
+            .hero-image {
+                margin-top: 2rem;
+                max-width: 80%;
+                height: auto;
+            }
+            
+            /* Section Titles Mobile */
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            /* Features Section Mobile */
+            .features-section {
+                padding: 60px 0;
+            }
+            
+            .feature-card {
+                margin-bottom: 2rem;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+            
+            .feature-title {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .feature-description {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            /* About Section Mobile */
+            .about-section {
+                padding: 60px 0;
+                text-align: center;
+            }
+            
+            .about-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .about-description {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 2rem;
+            }
+            
+            /* How It Works Section Mobile */
+            .how-it-works-section {
+                padding: 60px 0;
+            }
+            
+            .step-card {
+                margin-bottom: 2rem;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .step-icon {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 1rem;
+            }
+            
+            .step-title {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .step-description {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            /* Services Section Mobile */
+            .services-section {
+                padding: 60px 0;
+            }
+            
+            .service-card {
+                margin-bottom: 2rem;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+            
+            .service-title {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .service-description {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            /* Testimonials Section Mobile */
+            .testimonials-section {
+                padding: 60px 0;
+            }
+            
+            .testimonial-card {
+                margin-bottom: 2rem;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            
+            .customer-avatar {
+                width: 50px;
+                height: 50px;
+                margin: 0 auto 1rem;
+            }
+            
+            .customer-avatar img {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .customer-name {
+                font-size: 1.1rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .customer-rating {
+                margin-bottom: 1rem;
+            }
+            
+            .customer-rating i {
+                font-size: 1rem;
+            }
+            
+            .testimonial-text {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+            
+            .testimonial-service {
+                font-size: 0.85rem;
+            }
+            
+            /* Statistics Section Mobile */
+            .stats-section {
+                padding: 60px 0;
+            }
+            
+            .stat-card {
+                margin-bottom: 2rem;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            
+            .stat-icon {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+            }
+            
+            /* FAQ Section Mobile */
+            .faq-section {
+                padding: 60px 0;
+            }
+            
+            .accordion-button {
+                padding: 1rem;
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+            
+            .accordion-body {
+                padding: 1rem;
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            /* Contact Section Mobile */
+            .contact-section {
+                padding: 60px 0;
+            }
+            
+            .contact-card {
+                margin-bottom: 2rem;
+                padding: 1.5rem;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 1rem;
+            }
+            
+            .contact-title {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .contact-info {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .contact-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            
+            /* Download Section Mobile */
+            .download-section {
+                padding: 60px 0;
+            }
+            
+            .download-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .download-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .download-btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+            
+            /* Footer Mobile */
+            .footer {
+                padding: 40px 0 20px;
+                text-align: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .footer-section {
+                margin-bottom: 2rem;
+            }
+            
+            .footer-section h5 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .footer-section p,
+            .footer-section a {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+            
+            .social-links {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+            
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                margin: 0 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Navigation Small Mobile */
+            .navbar {
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                border-radius: 35px;
+                padding: 0.5rem 0;
+            }
+            
+            .navbar .container {
+                padding: 0 1rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+            
+            .navbar-nav .nav-link {
+                font-size: 0.95rem;
+            }
+            
+            /* Hero Section Small Mobile */
+            .hero-section {
+                padding: 60px 0 40px;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+                line-height: 1.1;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                line-height: 1.3;
+            }
+            
+            .btn {
+                max-width: 260px;
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+            
+            .hero-image {
+                max-width: 90%;
+            }
+            
+            /* Section Titles Small Mobile */
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            /* Features Section Small Mobile */
+            .features-section {
+                padding: 50px 0;
+            }
+            
+            .feature-card {
+                padding: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .feature-title {
+                font-size: 1.2rem;
+            }
+            
+            .feature-description {
+                font-size: 0.9rem;
+            }
+            
+            /* About Section Small Mobile */
+            .about-section {
+                padding: 50px 0;
+            }
+            
+            .about-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-description {
+                font-size: 0.95rem;
+            }
+            
+            .about-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                padding: 0.8rem;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 0.85rem;
+            }
+            
+            .floating-card {
+                position: static !important;
+                margin: 0.3rem;
+                animation: none;
+                width: 60px;
+                height: 60px;
+                font-size: 0.8rem;
+            }
+            
+            .about-image-container {
+                height: auto;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            /* How It Works Section Small Mobile */
+            .how-it-works-section {
+                padding: 50px 0;
+            }
+            
+            .step-card {
+                padding: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .step-number {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .step-icon {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .step-title {
+                font-size: 1.2rem;
+            }
+            
+            .step-description {
+                font-size: 0.9rem;
+            }
+            
+            /* Services Section Small Mobile */
+            .services-section {
+                padding: 50px 0;
+            }
+            
+            .service-card {
+                padding: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .service-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .service-title {
+                font-size: 1.2rem;
+            }
+            
+            .service-description {
+                font-size: 0.9rem;
+            }
+            
+            /* Testimonials Section Small Mobile */
+            .testimonials-section {
+                padding: 50px 0;
+            }
+            
+            .testimonial-card {
+                padding: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .customer-avatar {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .customer-avatar img {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .customer-name {
+                font-size: 1rem;
+            }
+            
+            .customer-rating i {
+                font-size: 0.9rem;
+            }
+            
+            .testimonial-text {
+                font-size: 0.9rem;
+            }
+            
+            .testimonial-service {
+                font-size: 0.8rem;
+            }
+            
+            /* Statistics Section Small Mobile */
+            .stats-section {
+                padding: 50px 0;
+            }
+            
+            .stat-card {
+                padding: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .stat-icon {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+            }
+            
+            /* FAQ Section Small Mobile */
+            .faq-section {
+                padding: 50px 0;
+            }
+            
+            .accordion-button {
+                padding: 0.8rem;
+                font-size: 0.95rem;
+            }
+            
+            .accordion-body {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            /* Contact Section Small Mobile */
+            .contact-section {
+                padding: 50px 0;
+            }
+            
+            .contact-card {
+                padding: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .contact-title {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                font-size: 1rem;
+            }
+            
+            .contact-description {
+                font-size: 0.85rem;
+            }
+            
+            .contact-form-container {
+                padding: 1.2rem;
+            }
+            
+            .form-title {
+                font-size: 1.3rem;
+            }
+            
+            .form-control {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+            }
+            
+            .btn-submit {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+            
+            /* Download Section Small Mobile */
+            .download-section {
+                padding: 50px 0;
+            }
+            
+            .download-title {
+                font-size: 1.8rem;
+            }
+            
+            .download-subtitle {
+                font-size: 1rem;
+            }
+            
+            .download-btn {
+                max-width: 260px;
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+            
+            /* Footer Small Mobile */
+            .footer {
+                padding: 30px 0 15px;
+            }
+            
+            .footer-section h5 {
+                font-size: 1.1rem;
+            }
+            
+            .footer-section p,
+            .footer-section a {
+                font-size: 0.85rem;
+            }
+            
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                margin: 0 0.3rem;
+            }
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 20px rgba(2, 128, 144, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            z-index: 1000;
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(2, 128, 144, 0.4);
+        }
+        
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+        
+        /* Scroll to Top Button Animation */
+        @keyframes scroll-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+        
+        .scroll-to-top.visible {
+            animation: scroll-bounce 2s ease-in-out infinite;
+        }
+        
+        .scroll-to-top:hover {
+            animation: none;
+        }
+        
+        /* Responsive scroll button */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <div class="brand-logo">
+                    <img src="assets/images/aprofile-logo.png" alt="Aprofile Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <i class="fas fa-home" style="display: none; color: white; font-size: 1.5rem;"></i>
+                </div>
+                <span class="brand-text">Aprofile</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">
+                            <i class="fas fa-star me-1"></i>Features
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">
+                            <i class="fas fa-cogs me-1"></i>Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                </ul>
+                <div class="navbar-actions d-flex align-items-center">
+                    <a href="https://play.google.com/store/apps/details?id=com.flairbyte.aprofile" 
+                       class="btn btn-download-nav" target="_blank" rel="noopener">
+                        <i class="fab fa-google-play me-2"></i>
+                        <span class="d-none d-md-inline">Get App</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Animated Background -->
+        <div class="hero-bg-animation">
+            <!-- Floating Circles -->
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            
+            <!-- Geometric Shapes -->
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            
+            <!-- Particle System -->
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            
+            <!-- Wave Shapes -->
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            
+            <!-- Hexagon Shapes -->
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            
+            <!-- Diamond Shapes -->
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            
+            <!-- Star Shapes -->
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            
+            <!-- Line Elements -->
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            
+            <!-- Glow Orbs -->
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            
+            <!-- Spiral/Helix Elements -->
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            
+            <!-- Morphing Blob Shapes -->
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            
+            <!-- Floating Text Elements -->
+            <div class="floating-text">
+                <div class="text-float">SERVICES</div>
+                <div class="text-float">QUALITY</div>
+                <div class="text-float">TRUST</div>
+                <div class="text-float">CONVENIENCE</div>
+                <div class="text-float">RELIABLE</div>
+            </div>
+            
+            <!-- Gradient Mesh -->
+            <div class="gradient-mesh"></div>
+            
+            <!-- Pulsing Rings -->
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            
+            <!-- Ripple Effects -->
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+            
+            <!-- Lightning Bolts -->
+            <div class="lightning">
+                <div class="bolt"></div>
+                <div class="bolt"></div>
+                <div class="bolt"></div>
+            </div>
+            
+            <!-- DNA Helix -->
+            <div class="dna-helix">
+                <div class="helix"></div>
+                <div class="helix"></div>
+                <div class="helix"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content fade-in">
+                        <h1 class="hero-title">Home Services at Your Doorstep</h1>
+                        <p class="hero-subtitle">Book, Schedule, and Enjoy Professional Services</p>
+                        <p class="hero-description">
+                            Aprofile brings you a comprehensive platform for all your home service needs. 
+                            From cleaning and beauty services to document verification and home repairs - 
+                            everything delivered right to your doorstep with just a few taps.
+                        </p>
+                        <a href="#download" class="btn btn-hero">
+                            <i class="fas fa-download me-2"></i>Download App
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image fade-in">
+                        <img src="assets/images/android-icon-foreground.png" alt="Aprofile App" class="phone-mockup">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <!-- Animated Background -->
+        <div class="section-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="hearts">
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+            </div>
+            <div class="clouds">
+                <div class="cloud"></div>
+                <div class="cloud"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <div class="floating-text">
+                <div class="text-float">FEATURES</div>
+                <div class="text-float">QUALITY</div>
+                <div class="text-float">RELIABLE</div>
+                <div class="text-float">SECURE</div>
+            </div>
+            <div class="gradient-mesh"></div>
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title fade-in">Why Choose Aprofile?</h2>
+                    <p class="section-subtitle fade-in">
+                        Experience the convenience of professional home services with our innovative platform
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="feature-title">24/7 Availability</h3>
+                        <p class="feature-description">
+                            Book services anytime, anywhere. Our platform is available round the clock 
+                            to serve your needs whenever you need them.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Verified Professionals</h3>
+                        <p class="feature-description">
+                            All our service providers are thoroughly verified and background-checked 
+                            to ensure your safety and satisfaction.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3 class="feature-title">Secure Payments</h3>
+                        <p class="feature-description">
+                            Pay securely through our integrated payment system with multiple options 
+                            and complete transaction protection.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Real-time Tracking</h3>
+                        <p class="feature-description">
+                            Track your service provider in real-time and get accurate arrival estimates 
+                            for better planning.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="feature-title">Quality Assurance</h3>
+                        <p class="feature-description">
+                            Rate and review services to help maintain high quality standards 
+                            and improve our service delivery.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="feature-title">24/7 Support</h3>
+                        <p class="feature-description">
+                            Get instant help with our dedicated customer support team 
+                            available around the clock.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <!-- Animated Background -->
+        <div class="section-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <div class="floating-text">
+                <div class="text-float">ABOUT</div>
+                <div class="text-float">STORY</div>
+                <div class="text-float">MISSION</div>
+                <div class="text-float">VISION</div>
+            </div>
+            <div class="gradient-mesh"></div>
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title fade-in">About Aprofile</h2>
+                    <p class="section-subtitle fade-in">
+                        Revolutionizing home services with technology and care
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-6">
+                    <div class="about-content fade-in">
+                        <h3 class="about-title">Our Story</h3>
+                        <p class="about-description">
+                            Founded in 2023, Aprofile emerged from a simple vision: to make professional home services 
+                            accessible, reliable, and convenient for everyone. We recognized the growing need for 
+                            quality home services in our fast-paced world and set out to bridge the gap between 
+                            service providers and customers.
+                        </p>
+                        <p class="about-description">
+                            Today, we're proud to serve thousands of satisfied customers across multiple cities, 
+                            connecting them with verified, skilled professionals who deliver exceptional service 
+                            right to their doorstep.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <h4 class="stat-number">10,000+</h4>
+                                <p class="stat-label">Happy Customers</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4 class="stat-number">500+</h4>
+                                <p class="stat-label">Verified Professionals</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4 class="stat-number">50,000+</h4>
+                                <p class="stat-label">Services Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-image fade-in">
+                        <div class="about-image-container">
+                            <div class="floating-card card-1">
+                                <i class="fas fa-heart"></i>
+                                <span>Customer First</span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Trusted & Safe</span>
+                            </div>
+                            <div class="floating-card card-3">
+                                <i class="fas fa-star"></i>
+                                <span>Quality Assured</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <!-- Animated Background -->
+        <div class="section-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <div class="floating-text">
+                <div class="text-float">STEPS</div>
+                <div class="text-float">PROCESS</div>
+                <div class="text-float">EASY</div>
+                <div class="text-float">SIMPLE</div>
+                <div class="text-float">QUICK</div>
+            </div>
+            <div class="gradient-mesh"></div>
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title fade-in">How It Works</h2>
+                    <p class="section-subtitle fade-in">
+                        Get professional home services in just 4 simple steps
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4 mt-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card fade-in">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="step-title">Download App</h3>
+                        <p class="step-description">
+                            Get the Aprofile app from Google Play Store and create your account
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card fade-in">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <h3 class="step-title">Select Service</h3>
+                        <p class="step-description">
+                            Choose from our wide range of professional home services
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card fade-in">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="step-title">Schedule Booking</h3>
+                        <p class="step-description">
+                            Pick your preferred date and time for the service
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="step-card fade-in">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="step-title">Enjoy Service</h3>
+                        <p class="step-description">
+                            Relax while our professionals deliver quality service at your home
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <!-- Animated Background -->
+        <div class="section-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <div class="floating-text">
+                <div class="text-float">SERVICES</div>
+                <div class="text-float">CLEANING</div>
+                <div class="text-float">BEAUTY</div>
+                <div class="text-float">REPAIR</div>
+                <div class="text-float">DOCUMENTS</div>
+            </div>
+            <div class="gradient-mesh"></div>
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title fade-in">Our Services</h2>
+                    <p class="section-subtitle fade-in">
+                        Comprehensive home services delivered to your doorstep
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="service-title">Home Cleaning</h3>
+                        <p class="service-description">Deep Clean, Regular & More</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-female"></i>
+                        </div>
+                        <h3 class="service-title">Beauty Services</h3>
+                        <p class="service-description">Spa, Salon & Wellness</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3 class="service-title">Document Services</h3>
+                        <p class="service-description">Verification, Notarization & More</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3 class="service-title">Plumbing Services</h3>
+                        <p class="service-description">Repair, Installation & More</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="service-title">Electrical Work</h3>
+                        <p class="service-description">Wiring, Repair & Installation</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card fade-in">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="service-title">Painting Services</h3>
+                        <p class="service-description">Interior, Exterior & More</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <!-- Animated Background -->
+        <div class="section-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <div class="floating-text">
+                <div class="text-float">REVIEWS</div>
+                <div class="text-float">TESTIMONIALS</div>
+                <div class="text-float">SATISFIED</div>
+                <div class="text-float">HAPPY</div>
+                <div class="text-float">TRUSTED</div>
+            </div>
+            <div class="gradient-mesh"></div>
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title fade-in">What Our Customers Say</h2>
+                    <p class="section-subtitle fade-in">
+                        Real feedback from satisfied customers who trust Aprofile
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4 mt-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-header">
+                            <div class="customer-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" alt="Sarah Johnson" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIGZpbGw9IiMwMjgwOTAiLz48dGV4dCB4PSI1MCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjMwIiBmb250LWZhbWlseT0iQXJpYWwiPlM8L3RleHQ+PC9zdmc+'">
+                            </div>
+                            <div class="customer-info">
+                                <h4 class="customer-name">Sarah Johnson</h4>
+                                <div class="customer-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "Aprofile has completely transformed how I manage home services. The cleaning service was exceptional, 
+                            and the professionals were punctual and thorough. Highly recommended!"
+                        </p>
+                        <div class="testimonial-service">
+                            <i class="fas fa-home"></i>
+                            <span>Home Cleaning</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-header">
+                            <div class="customer-avatar">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Michael Chen" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIGZpbGw9IiMwMjgwOTAiLz48dGV4dCB4PSI1MCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjMwIiBmb250LWZhbWlseT0iQXJpYWwiPk08L3RleHQ+PC9zdmc+'">
+                            </div>
+                            <div class="customer-info">
+                                <h4 class="customer-name">Michael Chen</h4>
+                                <div class="customer-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "The document verification service was incredibly convenient. I didn't have to leave my home 
+                            and the process was smooth and professional. Great service!"
+                        </p>
+                        <div class="testimonial-service">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Document Services</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-header">
+                            <div class="customer-avatar">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Emily Rodriguez" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNTAiIGZpbGw9IiMwMjgwOTAiLz48dGV4dCB4PSI1MCIgeT0iNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjMwIiBmb250LWZhbWlseT0iQXJpYWwiPkU8L3RleHQ+PC9zdmc+'">
+                            </div>
+                            <div class="customer-info">
+                                <h4 class="customer-name">Emily Rodriguez</h4>
+                                <div class="customer-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">
+                            "The beauty services at home are amazing! The therapist was skilled and the spa experience 
+                            was relaxing. Perfect for busy schedules!"
+                        </p>
+                        <div class="testimonial-service">
+                            <i class="fas fa-spa"></i>
+                            <span>Beauty Services</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="stats-section">
+        <!-- Animated Background -->
+        <div class="section-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <div class="floating-text">
+                <div class="text-float">STATS</div>
+                <div class="text-float">GROWTH</div>
+                <div class="text-float">SUCCESS</div>
+                <div class="text-float">ACHIEVEMENT</div>
+                <div class="text-float">MILESTONES</div>
+            </div>
+            <div class="gradient-mesh"></div>
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="stat-number" data-count="10000">0</h3>
+                        <p class="stat-label">Happy Customers</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="stat-number" data-count="500">0</h3>
+                        <p class="stat-label">Verified Professionals</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="stat-number" data-count="50000">0</h3>
+                        <p class="stat-label">Services Completed</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card fade-in">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="stat-number" data-count="4.8">0</h3>
+                        <p class="stat-label">Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download-section">
+        <!-- Animated Background -->
+        <div class="section-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <div class="floating-text">
+                <div class="text-float">DOWNLOAD</div>
+                <div class="text-float">GET APP</div>
+                <div class="text-float">INSTALL</div>
+                <div class="text-float">START</div>
+                <div class="text-float">JOIN</div>
+            </div>
+            <div class="gradient-mesh"></div>
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="download-title fade-in">Download Aprofile Today</h2>
+                    <p class="download-subtitle fade-in">
+                        Get started with professional home services in just a few taps
+                    </p>
+                    <div class="download-buttons fade-in">
+                        <a href="https://play.google.com/store/apps/details?id=com.flairbyte.aprofile" 
+                           class="download-btn" target="_blank" rel="noopener">
+                            <i class="fab fa-google-play"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">GET IT ON</div>
+                                <div style="font-size: 1.1rem; font-weight: 700;">Google Play</div>
+                            </div>
+                        </a>
+                        <a href="#" class="download-btn" onclick="showComingSoon()">
+                            <i class="fab fa-apple"></i>
+                            <div>
+                                <div style="font-size: 0.8rem; opacity: 0.8;">Download on the</div>
+                                <div style="font-size: 1.1rem; font-weight: 700;">App Store</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <p style="opacity: 0.8; font-size: 0.9rem;">
+                            <i class="fas fa-qrcode me-2"></i>
+                            Scan QR code to download
+                        </p>
+                        <div class="mt-3">
+                            <img src="assets/images/qr-code.png" alt="QR Code" 
+                                 style="width: 120px; height: 120px; border-radius: 10px; background: white; padding: 10px;"
+                                 onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <!-- Animated Background -->
+        <div class="section-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <div class="floating-text">
+                <div class="text-float">FAQ</div>
+                <div class="text-float">QUESTIONS</div>
+                <div class="text-float">ANSWERS</div>
+                <div class="text-float">HELP</div>
+                <div class="text-float">SUPPORT</div>
+            </div>
+            <div class="gradient-mesh"></div>
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+                    <p class="section-subtitle fade-in">
+                        Find answers to common questions about Aprofile services
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item fade-in">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How do I book a service on Aprofile?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Booking a service is simple! Download the Aprofile app, create your account, 
+                                    select your desired service, choose your preferred date and time, and confirm your booking. 
+                                    Our verified professionals will arrive at your doorstep at the scheduled time.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item fade-in">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Are all service providers verified and trustworthy?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! All our service providers undergo a rigorous verification process including 
+                                    background checks, skill assessments, and reference verification. We ensure that 
+                                    only qualified and trustworthy professionals join our platform.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item fade-in">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What payment methods do you accept?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We accept all major payment methods including credit/debit cards, digital wallets, 
+                                    UPI, and net banking. All payments are processed securely through our encrypted 
+                                    payment gateway.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item fade-in">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Can I reschedule or cancel my booking?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, you can reschedule or cancel your booking through the app. Cancellations 
+                                    made more than 24 hours in advance are free, while cancellations within 24 hours 
+                                    may incur a small fee depending on the service type.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item fade-in">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What areas do you currently serve?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We currently serve major metropolitan areas and are expanding rapidly. 
+                                    Check the app to see if your area is covered. We're continuously adding 
+                                    new cities and neighborhoods to serve more customers.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <!-- Animated Background -->
+        <div class="section-bg-animation">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            <div class="geometric-shapes">
+                <div class="triangle"></div>
+                <div class="triangle"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="wave-shapes">
+                <div class="wave"></div>
+                <div class="wave"></div>
+            </div>
+            <div class="hexagons">
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+                <div class="hexagon"></div>
+            </div>
+            <div class="diamonds">
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+                <div class="diamond"></div>
+            </div>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="glow-orbs">
+                <div class="glow-orb"></div>
+                <div class="glow-orb"></div>
+            </div>
+            <div class="spirals">
+                <div class="spiral"></div>
+                <div class="spiral"></div>
+            </div>
+            <div class="blobs">
+                <div class="blob"></div>
+                <div class="blob"></div>
+            </div>
+            <div class="floating-text">
+                <div class="text-float">CONTACT</div>
+                <div class="text-float">SUPPORT</div>
+                <div class="text-float">HELP</div>
+                <div class="text-float">MESSAGE</div>
+                <div class="text-float">CONNECT</div>
+            </div>
+            <div class="gradient-mesh"></div>
+            <div class="pulsing-rings">
+                <div class="ring"></div>
+                <div class="ring"></div>
+            </div>
+            <div class="ripples">
+                <div class="ripple"></div>
+                <div class="ripple"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title fade-in">Get in Touch</h2>
+                    <p class="section-subtitle fade-in">
+                        Have questions or need support? We're here to help!
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4 class="contact-title">Phone Support</h4>
+                        <p class="contact-info">+1 (555) 123-4567</p>
+                        <p class="contact-description">24/7 customer support</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4 class="contact-title">Email Support</h4>
+                        <p class="contact-info">support@aprofile.com</p>
+                        <p class="contact-description">We'll respond within 24 hours</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4 class="contact-title">Live Chat</h4>
+                        <p class="contact-info">Available in app</p>
+                        <p class="contact-description">Instant support during business hours</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form-container fade-in">
+                        <h3 class="form-title">Send us a Message</h3>
+                        <form class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-submit">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="assets/images/aprofile-logo.png" alt="Aprofile Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <i class="fas fa-home" style="display: none; color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 class="footer-title">Aprofile</h3>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;">
+                        Bringing professional home services to your doorstep with convenience, 
+                        quality, and reliability.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 style="color: var(--secondary-color); margin-bottom: 1rem;">Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Home Cleaning</a></li>
+                        <li><a href="#" class="footer-link">Beauty Services</a></li>
+                        <li><a href="#" class="footer-link">Document Services</a></li>
+                        <li><a href="#" class="footer-link">Plumbing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 style="color: var(--secondary-color); margin-bottom: 1rem;">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="footer-link">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 style="color: var(--secondary-color); margin-bottom: 1rem;">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#faq" class="footer-link">FAQ</a></li>
+                        <li><a href="#contact" class="footer-link">Live Chat</a></li>
+                        <li><a href="contact.html" class="footer-link">Report Issue</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255, 255, 255, 0.2); margin: 2rem 0 1rem;">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p style="color: rgba(255, 255, 255, 0.6); margin: 0;">
+                        © 2024 Aprofile. All rights reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p style="color: rgba(255, 255, 255, 0.6); margin: 0;">
+                        Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> for better home services
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to top button functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Coming soon alert for iOS
+        function showComingSoon() {
+            alert('iOS version coming soon! Stay tuned for updates.');
+        }
+
+        // Loading animation for download buttons
+        document.querySelectorAll('.download-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.href === '#') {
+                    e.preventDefault();
+                    return;
+                }
+                
+                const originalText = this.innerHTML;
+                this.innerHTML = '<div class="loading"></div> Redirecting...';
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.feature-card, .service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+
+        // Interactive cursor trail effect
+        let cursorTrail = null;
+        let trailElements = [];
+
+        function createCursorTrail() {
+            cursorTrail = document.createElement('div');
+            cursorTrail.className = 'cursor-trail';
+            document.body.appendChild(cursorTrail);
+        }
+
+        function updateCursorTrail(e) {
+            if (!cursorTrail) return;
+            
+            cursorTrail.style.left = e.clientX - 10 + 'px';
+            cursorTrail.style.top = e.clientY - 10 + 'px';
+            cursorTrail.style.opacity = '1';
+            
+            // Create trail elements
+            if (trailElements.length < 5) {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.left = e.clientX - 10 + 'px';
+                trail.style.top = e.clientY - 10 + 'px';
+                trail.style.opacity = '0.5';
+                trail.style.animation = 'fadeOut 1s ease-out forwards';
+                document.body.appendChild(trail);
+                trailElements.push(trail);
+                
+                setTimeout(() => {
+                    if (trail.parentNode) {
+                        trail.parentNode.removeChild(trail);
+                    }
+                    trailElements = trailElements.filter(el => el !== trail);
+                }, 1000);
+            }
+        }
+
+        function hideCursorTrail() {
+            if (cursorTrail) {
+                cursorTrail.style.opacity = '0';
+            }
+        }
+
+        // Add cursor trail styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                0% { opacity: 0.5; transform: scale(1); }
+                100% { opacity: 0; transform: scale(0.5); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize cursor trail
+        createCursorTrail();
+        
+        // Add event listeners for cursor trail
+        document.addEventListener('mousemove', updateCursorTrail);
+        document.addEventListener('mouseleave', hideCursorTrail);
+        document.addEventListener('mouseenter', () => {
+            if (cursorTrail) cursorTrail.style.opacity = '1';
+        });
+
+        // Add parallax effect to hero elements
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.hero-bg-animation > div');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        }
+
+        window.addEventListener('scroll', updateParallax);
+
+        // Add random movement to some elements
+        function addRandomMovement() {
+            const elements = document.querySelectorAll('.shape, .particle, .blob');
+            elements.forEach(element => {
+                const randomX = (Math.random() - 0.5) * 20;
+                const randomY = (Math.random() - 0.5) * 20;
+                element.style.transform += ` translate(${randomX}px, ${randomY}px)`;
+            });
+        }
+
+        // Apply random movement every 10 seconds
+        setInterval(addRandomMovement, 10000);
+
+        // Statistics counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number[data-count]');
+            
+            counters.forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-count'));
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    
+                    if (target % 1 === 0) {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                    } else {
+                        counter.textContent = current.toFixed(1);
+                    }
+                }, 16);
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Contact form handling
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const submitBtn = this.querySelector('.btn-submit');
+                const originalText = submitBtn.innerHTML;
+                
+                // Show loading state
+                submitBtn.innerHTML = '<div class="loading"></div> Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    // Show success message
+                    submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
+                    submitBtn.style.background = '#28a745';
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }, 2000);
+            });
+        }
+
+        // Add smooth reveal animation for FAQ items
+        const faqItems = document.querySelectorAll('.accordion-item');
+        faqItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+            item.classList.add('fade-in');
+        });
+
+        // Enhanced mobile navigation
+        const navToggler = document.querySelector('.navbar-toggler');
+        const navCollapse = document.querySelector('.navbar-collapse');
+        
+        if (navToggler && navCollapse) {
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navCollapse.classList.contains('show')) {
+                        navToggler.click();
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
